@@ -4,7 +4,7 @@ requires = [
     'tropofy',
     'requests',
     'simplekml',
-    'PIL',
+    'pillow',
 ]
 
 setup(
