@@ -11,11 +11,15 @@ After that do the following
 ```
 git clone https://github.com/jack775544/color-histogram
 cd color-histogram
+git update-index --assume-unchanged development.ini
+pip install -r requirements.txt
 python setup.py develop
 ```
+The pip install is not strictly required, however setup.py installs the packages from source where the pip does some pre compilation magic
 
-In development.ini make sure to place your Tropofy developer key into 
-`custom.license_key` field
+The git update-index is to make sure your development key is not added to the repo
+
+In development.ini make sure to place your Tropofy developer key into `custom.license_key` field
 
 ## Running
 
