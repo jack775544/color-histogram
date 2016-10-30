@@ -1,3 +1,0 @@
-tropofy
-requests
-simplekml

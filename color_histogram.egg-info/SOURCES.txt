@@ -1,8 +1,0 @@
-setup.py
-color_histogram/__init__.py
-color_histogram/starter.py
-color_histogram.egg-info/PKG-INFO
-color_histogram.egg-info/SOURCES.txt
-color_histogram.egg-info/dependency_links.txt
-color_histogram.egg-info/requires.txt
-color_histogram.egg-info/top_level.txt
