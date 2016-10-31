@@ -5,3 +5,4 @@ development.ini
 desktop.ini
 /.venv
 /color_histogram.egg-info
+/.vscode
