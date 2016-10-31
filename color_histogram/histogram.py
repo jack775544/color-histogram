@@ -11,15 +11,20 @@ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
 """
 
-from tropofy.app import AppWithDataSets, Step, StepGroup, ParameterGroup, Parameter
-from tropofy.widgets import ParameterForm, Chart, ExecuteFunction
+from collections import OrderedDict
+from StringIO import StringIO
+
 import requests
 from PIL import Image
-from StringIO import StringIO
-from collections import OrderedDict
+from tropofy.app import AppWithDataSets, Parameter, ParameterGroup, Step, StepGroup
+from tropofy.widgets import Chart, ExecuteFunction, ParameterForm
 from tropofy.widgets.text_widget import TextWidget
 
+
+# The total number of colours in the colour pallete for an RGB image
 MAX_NUM = int('FFFFFF', 16)
+# The number of partitions that the colour pallete will be split into
+# 65 evenly divides 0xFFFFFF so it was chosen for that reason
 PARTITIONS = 65
 
 
@@ -80,7 +85,6 @@ class CreateHistogram(ExecuteFunction):
         # Normalise the values in the map
         app_session.data_set.set_var('data', [{"color": '#' + hex(k)[2:].upper(), "pct": float(v)/total} for k, v in result_dict.iteritems()])
         app_session.task_manager.send_progress_message("Histogram successfully created. Go to next step to view it.")
-
 
 
 class HistogramApp(AppWithDataSets):
