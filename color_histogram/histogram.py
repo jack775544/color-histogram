@@ -83,6 +83,12 @@ class CreateHistogram(ExecuteFunction):
                 result_dict[min(result_dict, key=lambda p:abs(p - hex_code))] += 1
 
         # Normalise the values in the map
+        # An example result map 
+        # [
+        #   {"color": #000000, "pct": 0.2},
+        #   {"color": #FFFFFF, "pct": 0.8}
+        # ]
+        # This data structure can be used by Google Charts to output
         app_session.data_set.set_var('data', [{"color": '#' + hex(k)[2:].upper(), "pct": float(v)/total} for k, v in result_dict.iteritems()])
         app_session.task_manager.send_progress_message("Histogram successfully created. Go to next step to view it.")
 
